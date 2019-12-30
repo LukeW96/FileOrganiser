@@ -5,7 +5,8 @@
  */
 package FileOrganiser;
 
-import java.awt.Component;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 
 /**
@@ -17,7 +18,7 @@ import javax.swing.*;
 public class ImageRenderer extends DefaultListCellRenderer
 {
     String saveType;
-    ImageIcon icon;
+    ImageIcon icon = new ImageIcon("/resources/folderIcon.png");
     public ImageRenderer(String saveType)
     {
         this.saveType = saveType;
@@ -33,7 +34,8 @@ public class ImageRenderer extends DefaultListCellRenderer
                                        boolean cellHasFocus) {
         //Get the selected index. (The index param isn't
         //always valid, so just use the value.)
-//        int selectedIndex = ((Integer)value).intValue();
+//        int selectedIndex = ((Int
+//            icon = createImageIcon("");eger)value).intValue();
 
         if (isSelected) {
             setBackground(list.getSelectionBackground());
@@ -46,15 +48,13 @@ public class ImageRenderer extends DefaultListCellRenderer
         //Set the icon and text.  If icon was null, say so.
         if(saveType.equals("Folder"))
         {
-            System.out.println("gets here");
+
         }
         setIcon(icon);
-        /*if (icon != null) {
-            setText(pet);
+        if (icon != null) {
             setFont(list.getFont());
-        }*/
+        }
 
         return this;
     }
-
 }
