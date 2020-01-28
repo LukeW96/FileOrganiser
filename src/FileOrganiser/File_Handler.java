@@ -22,4 +22,23 @@ public class File_Handler
         File file = new File(fileName);
         file.delete();
     }
+
+    public void create(String fileName)
+    {
+
+    }
+
+    public String getPermissions(String fileName)
+    {
+        String permissions = "";
+        File f = new File(fileName);
+        if(f.canRead())
+            permissions += "R";
+        if(f.canWrite())
+            permissions += "W";
+        if(f.canExecute())
+            permissions += "X";
+
+        return null;
+    }
 }

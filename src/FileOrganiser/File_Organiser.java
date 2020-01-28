@@ -22,43 +22,10 @@ public class File_Organiser extends javax.swing.JFrame {
         JFrame frame = new JFrame();
 
         UIForm ui = new UIForm();
-//        model = new DefaultListModel();
-//        getDirectory();
-//        initComponents();
-//        updateFileList();
-    }
-/*
-    private void getDirectory()
-    {
-        try
-        {
-              directory = "";
-//            directory = JOptionPane.showInputDialog("Enter Directory");
-        }
-        catch(Exception e)
-        {}  
-    }
-    
-    private void updateFileList()
-    {
-        File folder = new File(directory);
-        File[] fileList = folder.listFiles();
-        updateJList(fileList);
-    }
+        DirectoryNavigator directoryNavigator = new DirectoryNavigator();
 
-    private void updateJList(File[] fileList)
-    {
-        model.clear();
-        for(File file: fileList)
-        {
-            System.out.println(file.toString());
-            model.addElement(file);
-        }
+}
 
-        JListFiles.setCellRenderer(new ImageRenderer("Folder"));
-        JListFiles.setModel(model);
-    }
-*/
     /**
      * @param args the command line arguments
      */

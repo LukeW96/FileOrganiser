@@ -26,6 +26,7 @@ public class UIForm
         frame.setSize(width,height);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(generatePanel());
+        //provide path to file below (soon to be swapped to Directory Navigator.
         updateTableFields("");
         frame.revalidate();
     }
@@ -44,7 +45,6 @@ public class UIForm
         tableModel = new DefaultTableModel();
         tableModel.addColumn("filename");
         tableModel.addColumn("extension");
-        tableModel.addRow(new Object[]{"tempFileName",".txt"});
         JTable table = new JTable(tableModel);
 
 //        jtable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -65,9 +65,18 @@ public class UIForm
         return new ArrayList<String>(Arrays.asList(contents));
     }
 
+    private void addRowToTable(String filename, String fileExtension)
+    {
+        tableModel.addRow(new Object[]{filename,""});
+    }
+
     public void updateTableFields(String pathToFile)
     {
-        tableModel.addRow(new Object[]{"added file", ".jpg"});
         ArrayList<String> contents = getFields(pathToFile);
+
+        for(String str : contents)
+        {
+            addRowToTable(str,"");
+        }
     }
 }
