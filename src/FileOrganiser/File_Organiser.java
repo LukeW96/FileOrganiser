@@ -20,11 +20,8 @@ public class File_Organiser extends javax.swing.JFrame {
     public File_Organiser() 
     {
         JFrame frame = new JFrame();
-
-        UIForm ui = new UIForm();
-        DirectoryNavigator directoryNavigator = new DirectoryNavigator();
-
-}
+        UIForm ui = new UIForm(500,500);
+    }
 
     /**
      * @param args the command line arguments

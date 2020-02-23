@@ -11,12 +11,14 @@ import java.io.File;
  *
  * @author LWill
  */
-public class File_Handler 
+public class File_Handler extends File
 {
-    public File_Handler()
-    {
+
+
+    public File_Handler(String pathname) {
+        super(pathname);
     }
-    
+
     public void Delete(String fileName)
     {
         File file = new File(fileName);

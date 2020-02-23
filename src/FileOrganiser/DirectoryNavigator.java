@@ -2,12 +2,12 @@ package FileOrganiser;
 
 public class DirectoryNavigator {
 
+    private String currentDirectory ;
+
     public String getCurrentDirectory()
     {
         return currentDirectory;
     }
-
-    private String currentDirectory = "";
 
     public DirectoryNavigator()
     {
@@ -18,5 +18,13 @@ public class DirectoryNavigator {
     public DirectoryNavigator(String pathToLocation)
     {
         currentDirectory = pathToLocation;
+        System.out.println(currentDirectory);
+    }
+
+    public void changeDirectory(String relativeDirectory)
+    {
+        System.out.println("relative = " + relativeDirectory);
+        currentDirectory = currentDirectory + "/" + relativeDirectory;
+        System.out.println(currentDirectory);
     }
 }
