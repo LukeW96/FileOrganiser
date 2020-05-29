@@ -24,7 +24,7 @@ public class DirectoryNavigator {
     public void changeDirectory(String relativeDirectory)
     {
         System.out.println("relative = " + relativeDirectory);
-        currentDirectory = currentDirectory + "/" + relativeDirectory;
+        currentDirectory = currentDirectory + relativeDirectory;
         System.out.println(currentDirectory);
     }
 }

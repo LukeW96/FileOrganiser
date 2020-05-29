@@ -12,26 +12,36 @@ import java.util.Arrays;
 public class UIForm
 {
 
+    private JTable jtable;
     JFrame frame;
     DefaultTableModel tableModel;
-    DirectoryNavigator directoryNavigator;
     //todo don't use enforced height/width. Better to scale with window size
 
     public UIForm(int width, int height)
     {
-        directoryNavigator = new DirectoryNavigator("");
-        System.out.println(directoryNavigator.getCurrentDirectory());
 
         frame = new JFrame("File Organiser");
         frame.setVisible(true);
         frame.setSize(width,height);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        jtable = new JTable();
+        jtable = generateTable();
         frame.add(generatePanel());
-        updateTableFields(directoryNavigator.getCurrentDirectory());
 
         frame.revalidate();
     }
 
+
+    public JTable getTable()
+    {
+        return jtable;
+    }
+
+    public void setTable(JTable jtable)
+    {
+        this.jtable = jtable;
+    }
 
     private JPanel generatePanel()
     {
@@ -54,10 +64,7 @@ public class UIForm
         layoutConstraints.gridy = 1;
         layoutConstraints.weighty = 3;
 
-        JTable table = generateTable();
-
-        table.getSelectionModel().addListSelectionListener(new NavigationListener(table,directoryNavigator));
-        jpanel.add(new JScrollPane(table),layoutConstraints);
+        jpanel.add(new JScrollPane(jtable),layoutConstraints);
         return jpanel;
     }
 
@@ -76,7 +83,6 @@ public class UIForm
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         return table;
     }
-
     private ArrayList<String> getFields(String pathToFile)
     {
        File directory = new File(pathToFile);
@@ -99,10 +105,11 @@ public class UIForm
     public void updateTableFields(String pathToFile)
     {
         ArrayList<String> contents = getFields(pathToFile);
-
+        tableModel.setRowCount(0);
         for(String str : contents)
         {
             addRowToTable(str,"");
         }
+        tableModel.fireTableDataChanged();
     }
 }

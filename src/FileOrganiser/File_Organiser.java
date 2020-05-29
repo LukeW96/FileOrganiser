@@ -5,7 +5,6 @@
  */
 package FileOrganiser;
 
-import java.io.File;
 import javax.swing.*;
 
 /**
@@ -20,7 +19,11 @@ public class File_Organiser extends javax.swing.JFrame {
     public File_Organiser() 
     {
         JFrame frame = new JFrame();
+        DirectoryNavigator directoryNavigator = new DirectoryNavigator("HARDCODED PATH CURRENTLY");
+        System.out.println(directoryNavigator.getCurrentDirectory());
         UIForm ui = new UIForm(500,500);
+
+        UIController controller = new UIController(directoryNavigator,ui);
     }
 
     /**
