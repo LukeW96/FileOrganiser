@@ -99,7 +99,20 @@ public class UIForm
 
     private void addRowToTable(String filename, String fileExtension)
     {
-        tableModel.addRow(new Object[]{filename,""});
+        tableModel.addRow(new Object[]{filename,fileExtension});
+    }
+
+    private String getFileExtensionType(String filename)
+    {
+        if(filename.contains("/"))
+        {
+            return "Folder";
+        }
+        else if(filename.contains("."))
+        {
+            return filename.substring(filename.lastIndexOf("."));
+        }
+        return "File Type not retrievable";
     }
 
     public void updateTableFields(String pathToFile)
@@ -108,7 +121,7 @@ public class UIForm
         tableModel.setRowCount(0);
         for(String str : contents)
         {
-            addRowToTable(str,"");
+            addRowToTable(str,getFileExtensionType(str));
         }
         tableModel.fireTableDataChanged();
     }

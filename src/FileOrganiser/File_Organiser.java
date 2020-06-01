@@ -19,7 +19,8 @@ public class File_Organiser extends javax.swing.JFrame {
     public File_Organiser() 
     {
         JFrame frame = new JFrame();
-        DirectoryNavigator directoryNavigator = new DirectoryNavigator("HARDCODED PATH CURRENTLY");
+        DirectoryNavigator directoryNavigator = new DirectoryNavigator();
+//        DirectoryNavigator directoryNavigator = new DirectoryNavigator("Hardcoded file path");
         System.out.println(directoryNavigator.getCurrentDirectory());
         UIForm ui = new UIForm(500,500);
 

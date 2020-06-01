@@ -12,19 +12,17 @@ public class DirectoryNavigator {
     public DirectoryNavigator()
     {
         //replace with local desktop path.
-        currentDirectory = "";
+        currentDirectory = Configuration.homeDir;
     }
 
     public DirectoryNavigator(String pathToLocation)
     {
         currentDirectory = pathToLocation;
-        System.out.println(currentDirectory);
+
     }
 
     public void changeDirectory(String relativeDirectory)
     {
-        System.out.println("relative = " + relativeDirectory);
-        currentDirectory = currentDirectory + relativeDirectory;
-        System.out.println(currentDirectory);
+        currentDirectory = currentDirectory +  "/" + relativeDirectory;
     }
 }
