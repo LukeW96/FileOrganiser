@@ -1,4 +1,4 @@
-package FileOrganiser;
+package main;
 
 public class DirectoryNavigator {
 
@@ -25,4 +25,10 @@ public class DirectoryNavigator {
     {
         currentDirectory = currentDirectory +  "/" + relativeDirectory;
     }
+
+    public void backDirectory()
+    {
+        currentDirectory = currentDirectory.substring(0,currentDirectory.lastIndexOf("/"));
+    }
+
 }

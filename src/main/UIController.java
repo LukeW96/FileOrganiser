@@ -1,4 +1,4 @@
-package FileOrganiser;
+package main;
 
 import javax.swing.*;
 

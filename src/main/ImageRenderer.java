@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FileOrganiser;
+package main;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import javax.swing.*;
 
 /**

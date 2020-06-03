@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FileOrganiser;
+package main;
 
 import javax.swing.*;
 
@@ -21,7 +21,6 @@ public class File_Organiser extends javax.swing.JFrame {
         JFrame frame = new JFrame();
         DirectoryNavigator directoryNavigator = new DirectoryNavigator();
 //        DirectoryNavigator directoryNavigator = new DirectoryNavigator("Hardcoded file path");
-        System.out.println(directoryNavigator.getCurrentDirectory());
         UIForm ui = new UIForm(500,500);
 
         UIController controller = new UIController(directoryNavigator,ui);

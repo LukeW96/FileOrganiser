@@ -1,4 +1,4 @@
-package FileOrganiser;
+package main;
 
 import javax.swing.*;
 
@@ -19,7 +19,6 @@ public class UIForm
 
     public UIForm(int width, int height)
     {
-
         frame = new JFrame("File Organiser");
         frame.setVisible(true);
         frame.setSize(width,height);
@@ -31,7 +30,6 @@ public class UIForm
 
         frame.revalidate();
     }
-
 
     public JTable getTable()
     {
