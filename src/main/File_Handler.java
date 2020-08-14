@@ -14,7 +14,6 @@ import java.io.File;
 public class File_Handler extends File
 {
 
-
     public File_Handler(String pathname) {
         super(pathname);
     }
